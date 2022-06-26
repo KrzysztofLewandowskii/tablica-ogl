@@ -1,0 +1,6 @@
+.PageHeaderContainer {
+    display: flex;
+    justify-content: space-between;
+    background-color: blueviolet;
+    line-height: 50px;
+}

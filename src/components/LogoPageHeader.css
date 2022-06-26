@@ -1,0 +1,10 @@
+.logoContainer {
+    text-align: center;
+    width: 300px;
+    color: white;
+    line-height: 70px;
+}
+.logoName {
+    margin: 0;
+    font-style: italic;
+}
