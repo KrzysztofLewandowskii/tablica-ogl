@@ -1,9 +1,10 @@
-import './App.css';
+import PageHeader from "./components/PageHeader";
+import React from "react";
 
 function App() {
   return (
-    <div className="App">
-
+    <div>
+        <PageHeader/>
     </div>
   );
 }

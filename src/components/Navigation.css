@@ -1,0 +1,17 @@
+.navContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+}
+.navContainer .navItem {
+    text-decoration: none;
+    padding: 10px 20px;
+    color: white;
+    background-color: transparent;
+    transition: .3s color, .3s background-color;
+}
+.navContainer .navItem:hover {
+    color: #000000;
+    background-color: #a552fd;
+}
