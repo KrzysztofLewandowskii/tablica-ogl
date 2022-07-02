@@ -1,0 +1,42 @@
+.notice {
+    margin: 10px;
+    width: 600px;
+    border: 1px solid black;
+    border-radius: 7px;
+}
+.notice-title {
+    margin: 5px 0;
+    padding-left: 15px;
+    font-size: 20px;
+}
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    margin-bottom: 10px;
+}
+.notice-details {
+    margin: 10px;
+}
+.notice-author {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+}
+.card-date {
+    font-size: 12px;
+}
+.btn-card {
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin: 0 7px;
+    background-color: cornflowerblue;
+}

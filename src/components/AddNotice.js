@@ -1,9 +1,11 @@
 import React from 'react';
 import NoticeForm from './NoticeForm';
-
-const AddNotice = () => {
+import { useNavigate} from "react-router-dom";
+const AddNotice = ({notices, setNotices}) => {
+    let navigate = useNavigate();
     const handleOnSubmit = (notice) => {
-        console.log(notice);
+        setNotices([notice, ...notices]);
+        navigate('/');
     };
 
     return (
