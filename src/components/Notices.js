@@ -17,7 +17,6 @@ const Notices = ({notices, setNotices}) => {
             <div className="notice-list">
                 {!_.isEmpty(notices) ? (
                     notices.map((notice) => (
-                        notice.status === 'NORMAL' &&
                         <Notice key={notice.id} {...notice} handleRemoveBook={handleRemoveBook}/>
                     ))
                 ) : (
