@@ -9,6 +9,7 @@ import ProfileNotice from "../components/ProfileNotice";
 import Footer from "../components/Footer";
 import SelectedNotices from "../components/SelectedNotices";
 import AcceptedNotices from "../components/AcceptedNotices";
+import NotFound from "../components/NotFound";
 
 const AppRouter = () => {
     const [notices, setNotices] = useLocalStorage('notices', [{
@@ -49,6 +50,7 @@ const AppRouter = () => {
                     <Route path="/edit/:id" element={<EditNotice notices={notices} setNotices={setNotices}/>}/>
                     <Route path="/addNotice" element={<AddNotice notices={notices} setNotices={setNotices}/>}/>
                     <Route path="/profile/:id" element={<ProfileNotice notices={notices} setNotices={setNotices}/>}/>
+                    <Route path="*" element={<NotFound/>}/>
                 </Routes>
                 <Footer/>
             </div>
