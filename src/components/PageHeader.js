@@ -5,9 +5,11 @@ import './PageHeader.css';
 
 const PageHeader = () => {
     return (
-        <div className="PageHeaderContainer">
-            <LogoPageHeader projectTitle={'Tablica ogłoszeń'}/>
-            <Navigation/>
+        <div className="fixed-navbar">
+            <div className="PageHeaderContainer">
+                <LogoPageHeader projectTitle={'Tablica ogłoszeń'}/>
+                <Navigation/>
+            </div>
         </div>
     );
 };

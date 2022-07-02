@@ -1,41 +1,33 @@
 import React, {useState} from 'react';
 import {v4 as uuidv4} from 'uuid';
+import './NoticeForm.css';
 
 const NoticeForm = (props) => {
         const [notice, setNotice] = useState({
             title: props.notice ? props.notice.title : '',
             author: props.notice ? props.notice.author : '',
             description: props.notice ? props.notice.description : '',
-            date: props.notice ? props.notice.date : ''
+            date: props.notice ? props.notice.date : '',
+            status: props.status ? props.notice.status : ''
         });
 
-        const [errorMsg, setErrorMsg] = useState('');
-        const {title, author, description} = notice;
+        const {title, author, description, status} = notice;
 
         const handleOnSubmit = (event) => {
             event.preventDefault();
-            const values = [title, author, description];
-            let errorMsg = '';
 
-            const allFieldsFilled = values.every((field) => {
-                const value = `${field}`.trim();
-                return value !== '' && value !== '0';
-            });
+            const notice = {
+                id: uuidv4(),
+                title,
+                author,
+                description,
+                date: new Date(),
+                status
+            };
 
-            if (allFieldsFilled) {
-                const notice = {
-                    id: uuidv4(),
-                    title,
-                    author,
-                    description,
-                    date: new Date()
-                };
-                props.handleOnSubmit(notice);
-            } else {
-                errorMsg = 'Proszę uzupełnij wszystkie dane.';
-            }
-            setErrorMsg(errorMsg);
+            props.handleOnSubmit(notice);
         };
+
 
         const handleInputChange = (event) => {
             const {name, value} = event.target;
@@ -45,44 +37,63 @@ const NoticeForm = (props) => {
             }));
         }
 
+
         return (
             <div className="main-form">
-                {errorMsg && <p className="errorMsg">{errorMsg}</p>}
-                <form onSubmit={handleOnSubmit}>
+                <form className="form" onSubmit={handleOnSubmit}>
                     <div>
-                        <label>Tytuł</label>
+                        <label className="input-label">Tytuł</label>
                         <input
                             className="input-control"
                             type="text"
                             name="title"
+                            required
                             value={title}
                             placeholder="Wprowadź tytuł"
                             onChange={handleInputChange}
                         />
                     </div>
                     <div>
-                        <label>Autor</label>
+                        <label className="input-label">Autor</label>
                         <input
                             className="input-control"
                             type="text"
                             name="author"
+                            required
                             value={author}
                             placeholder="Wprowadź autora"
                             onChange={handleInputChange}
                         />
                     </div>
                     <div>
-                        <label>Opis</label>
-                        <input
+                        <label className="input-label">Opis</label>
+                        <textarea
                             className="input-control"
-                            type="text"
+                            rows="4"
                             name="description"
+                            required
                             value={description}
                             placeholder="Wprowadź opis"
                             onChange={handleInputChange}
                         />
                     </div>
-                    <button  type="submit" className="submit-btn">
+                    <div>
+                        <label className="input-label">Status</label>
+                        <select
+                            className="input-control"
+                            name="status"
+                            required
+                            value={status}
+                            onChange={handleInputChange}
+
+                        >
+                            <option value="" disabled={true}>Wybierz status</option>
+                            <option value="NORMAL">Podstawowy</option>
+                            <option value="SELECTED">Wybrane</option>
+                            <option value="ACCEPTED">Zaakceptowane</option>
+                        </select>
+                    </div>
+                    <button type="submit" className="btn">
                         Dodaj
                     </button>
                 </form>

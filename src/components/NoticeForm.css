@@ -1,0 +1,41 @@
+.main-form {
+    margin-top: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-form .form {
+    width: 500px;
+    border-radius: 4px;
+    padding: 20px;
+}
+.main-form .form div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.input-label {
+    margin: 10px 0 5px 0;
+}
+.input-control {
+    width: 50%;
+    padding: 5px;
+}
+.input-control:focus {
+    border: none;
+    background-color: #f3f3f3;
+}
+.btn {
+    width: 50%;
+    padding: 10px 0;
+    background-color: blueviolet;
+    border: none;
+    color: white;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.errorMsg {
+    color: red;
+}

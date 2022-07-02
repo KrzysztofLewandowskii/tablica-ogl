@@ -6,8 +6,8 @@ const Navigation = () => {
         <nav className="navContainer">
                 <Link className="navItem" to="/AddNotice">Dodaj ogłoszenie</Link>
                 <Link className="navItem" to="/">Ogłoszenia</Link>
-                <Link className="navItem" to="/">Wybrane ogłoszenia</Link>
-                <Link className="navItem" to="/">Zaakceptowane ogłoszenia</Link>
+                <Link className="navItem" to="/selectedNotices">Wybrane ogłoszenia</Link>
+                <Link className="navItem" to="/acceptedNotices">Zaakceptowane ogłoszenia</Link>
         </nav>
     );
 };

@@ -1,0 +1,9 @@
+.local-header {
+    margin: 100px 30px 30px 30px;
+}
+.notice-list {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
